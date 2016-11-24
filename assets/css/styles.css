@@ -75,7 +75,7 @@ html, body {
   max-width: 64.28571vh;
 }
 
-.flip-container.hover .flipper {
+.flip-container.flip-it .flipper {
   -webkit-transform: rotateY(-180deg);
           transform: rotateY(-180deg);
 }

@@ -1,7 +1,7 @@
 (() => {
   const card = document.getElementsByClassName('flip-container')[0]
   card.addEventListener('click', event => {
-    let cName = 'hover';
+    let cName = 'flip-it';
     let toggled = card.classList.contains(cName)
     card.classList[toggled ? 'remove' : 'add'](cName)
   })
