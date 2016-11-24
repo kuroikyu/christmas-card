@@ -1,0 +1,110 @@
+/* --------------------------------------------------------------------------
+   Variables
+   -------------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------
+   Global Styles / Helper Classes
+   -------------------------------------------------------------------------- */
+.clearfix::before, .clearfix::after {
+  content: '';
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+.wrapper {
+  width: 800px;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.muted {
+  color: rgba(0, 0, 0, 0.65);
+}
+
+::-moz-selection {
+  text-shadow: none;
+  background: #fff;
+}
+
+::selection {
+  text-shadow: none;
+  background: #fff;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Styles
+   -------------------------------------------------------------------------- */
+html, body {
+  height: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.canvas {
+  height: 100%;
+  width: 100%;
+  background-color: #444;
+  position: relative;
+}
+
+.canvas .image {
+  height: 900px;
+  width: 700px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(50%, -50%);
+      -ms-transform: translate(50%, -50%);
+          transform: translate(50%, -50%);
+  background-color: #aaa;
+  border-radius: 5px;
+  background-image: url("https://images.unsplash.com/photo-1466657718950-8f9346c04f8f");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 0 20px 10px -10px rgba(0, 0, 0, 0.25);
+  -webkit-transform-origin: left;
+      -ms-transform-origin: left;
+          transform-origin: left;
+}
+
+.canvas .image.flipped {
+  -webkit-animation: flipping 600ms ease-in forwards;
+          animation: flipping 600ms ease-in forwards;
+  background-position: -300%;
+}
+
+@-webkit-keyframes flipping {
+  0% {
+  }
+  50% {
+    background-position: -300%;
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%) rotateY(-180deg);
+            transform: translate(-50%, -50%) rotateY(-180deg);
+  }
+}
+
+@keyframes flipping {
+  0% {
+  }
+  50% {
+    background-position: -300%;
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%) rotateY(-180deg);
+            transform: translate(-50%, -50%) rotateY(-180deg);
+  }
+}
