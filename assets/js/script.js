@@ -23,7 +23,8 @@ function getQueryValues() {
   let values = []
   for (let i=0; i<vars.length; i++) {
     let out = vars[i].split('=')[1]
-    out = out.replace('%20', ' ')
+    out = out.replace(/%20/g, ' ')
+    console.log(out);
     values.push(out)
   }
     return values
