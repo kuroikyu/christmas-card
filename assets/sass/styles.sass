@@ -6,10 +6,18 @@ $main: #fff
 $secondary: #fff
 $highlight: #fff
 
-$background: #fff
+$background: #444
 $text: #000
 
+$shadow: rgba(0, 0, 0, .25)
 $white: #fff
+
+$card-height: 700px
+$card-max-height: 90vh
+$card-ratio: 5/7
+$card-width: $card-height * $card-ratio
+$card-max-width: $card-max-height * $card-ratio
+
 
 
 /* --------------------------------------------------------------------------
@@ -32,8 +40,8 @@ $white: #fff
   color: transparentize($text, .35)
 
 ::selection
-    text-shadow: none
-    background: $highlight
+  text-shadow: none
+  background: $highlight
 
 
 hr
@@ -47,53 +55,73 @@ hr
 /* --------------------------------------------------------------------------
    Styles
    -------------------------------------------------------------------------- */
+*
+  box-sizing: border-box
+
 html, body
   height: 100%
   overflow: hidden
-  box-sizing: border-box
 
-.canvas
+.background
+  background-color: $background
   height: 100%
   width: 100%
-  background-color: #444
+
+.flip-container
+  max-height: $card-max-height
+  height: $card-height
+  left: 50%
+  perspective: 1000px
+  position: absolute
+  top: 50%
+  transform: translate(-50%, -50%)
+  width: $card-width
+  max-width: $card-max-width
+  // &:hover,
+  &.hover
+    .flipper
+      transform: rotateY(-180deg)
+  .front, .card,
+    height: $card-height
+    max-height: $card-max-height
+    width: $card-width
+    max-width: $card-max-width
+
+.flipper
   position: relative
+  transform-style: preserve-3d
+  transition: all 900ms ease-in-out
 
-  .image
-    height: 900px
-    width: 700px
+.front, .card
+  box-shadow: 0 20px 10px -14px $shadow
+  backface-visibility: hidden
+  border-radius: 5px
+  left: 0
+  position: absolute
+  top: 0
+
+.front
+  background-image: url(https://images.unsplash.com/photo-1466657718950-8f9346c04f8f)
+  background-position: center
+  background-size: cover
+  transform: rotateY(0deg)
+  z-index: 2
+
+.card
+  background-color: cornsilk
+  padding: 1em
+  transform: rotateY(180deg)
+  .to, .message, .from
     position: absolute
-    left: 50%
+    font-size: 1.25em
+
+  .to
+  .message
     top: 50%
-    transform: translate(50%,-50%)
-
-    background-color: #aaa
-    border-radius: 5px
-    background-image: url('https://images.unsplash.com/photo-1466657718950-8f9346c04f8f')
-    background-size: cover
-    background-position: center
-    background-repeat: no-repeat
-
-    // transition: transform .6s cubic-bezier(.49, .23, .58, .49)
-    box-shadow: 0 20px 10px -10px rgba(0,0,0,.25)
-
-    // transform-origin: 100% 50%
-    transform-origin: left
-    // transform-style: preserve-3d
-
-    &.flipped
-      // transition: transform .6s cubic-bezier(.49, .23, .58, .49)
-      // transform: translate(-150%,-50%) rotateY(-180deg)
-      animation: flipping 600ms ease-in forwards
-      // background-color: silver
-      background-position: -300%
-
-
-@keyframes flipping
-  0%
-    // transform: translate(-50%,-50%)
-
-  50%
-    background-position: -300%
-  100%
-    // transform: translate(-150%,-50%) rotateY(-180deg)
-    transform: translate(-50%,-50%) rotateY(-180deg)
+    left: 50%
+    transform: translate(-50%, -50%)
+    width: 100%
+    max-width: 90%
+  .from
+    bottom: 1em
+    right: 1em

@@ -45,66 +45,97 @@ hr {
 /* --------------------------------------------------------------------------
    Styles
    -------------------------------------------------------------------------- */
-html, body {
-  height: 100%;
-  overflow: hidden;
+* {
   box-sizing: border-box;
 }
 
-.canvas {
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+.background {
+  background-color: #444;
   height: 100%;
   width: 100%;
-  background-color: #444;
-  position: relative;
 }
 
-.canvas .image {
-  height: 900px;
-  width: 700px;
-  position: absolute;
+.flip-container {
+  max-height: 90vh;
+  height: 700px;
   left: 50%;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+  position: absolute;
   top: 50%;
-  -webkit-transform: translate(50%, -50%);
-      -ms-transform: translate(50%, -50%);
-          transform: translate(50%, -50%);
-  background-color: #aaa;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 500px;
+  max-width: 64.28571vh;
+}
+
+.flip-container.hover .flipper {
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
+}
+
+.flip-container .front, .flip-container .card {
+  height: 700px;
+  max-height: 90vh;
+  width: 500px;
+  max-width: 64.28571vh;
+}
+
+.flipper {
+  position: relative;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  transition: all 900ms ease-in-out;
+}
+
+.front, .card {
+  box-shadow: 0 20px 10px -14px rgba(0, 0, 0, 0.25);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
   border-radius: 5px;
-  background-image: url("https://images.unsplash.com/photo-1466657718950-8f9346c04f8f");
-  background-size: cover;
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+.front {
+  background-image: url(https://images.unsplash.com/photo-1466657718950-8f9346c04f8f);
   background-position: center;
-  background-repeat: no-repeat;
-  box-shadow: 0 20px 10px -10px rgba(0, 0, 0, 0.25);
-  -webkit-transform-origin: left;
-      -ms-transform-origin: left;
-          transform-origin: left;
+  background-size: cover;
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
+  z-index: 2;
 }
 
-.canvas .image.flipped {
-  -webkit-animation: flipping 600ms ease-in forwards;
-          animation: flipping 600ms ease-in forwards;
-  background-position: -300%;
+.card {
+  background-color: cornsilk;
+  padding: 1em;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
 }
 
-@-webkit-keyframes flipping {
-  0% {
-  }
-  50% {
-    background-position: -300%;
-  }
-  100% {
-    -webkit-transform: translate(-50%, -50%) rotateY(-180deg);
-            transform: translate(-50%, -50%) rotateY(-180deg);
-  }
+.card .to, .card .message, .card .from {
+  position: absolute;
+  font-size: 1.25em;
 }
 
-@keyframes flipping {
-  0% {
-  }
-  50% {
-    background-position: -300%;
-  }
-  100% {
-    -webkit-transform: translate(-50%, -50%) rotateY(-180deg);
-            transform: translate(-50%, -50%) rotateY(-180deg);
-  }
+.card .message {
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 90%;
+}
+
+.card .from {
+  bottom: 1em;
+  right: 1em;
 }

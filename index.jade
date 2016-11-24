@@ -1,3 +1,5 @@
+- var targets = ["name1", "name2"]
+
 doctype html
 html(lang="en")
   head
@@ -19,8 +21,15 @@ html(lang="en")
     link(rel="stylesheet" href="assets/css/styles.css")
 
   body
-    .canvas 
-      .image
+    .background
+      .flip-container.hover
+        .flipper
+          .front
+          .card
+            .to to #[span.names-target]
+            .message Have a fabulous festive season and a #[em feliz año nuevo!]
+            .from Alvaro &amp; Marta
+            
     
     // script.js link
     script(type="application/javascript", src="assets/js/script.min.js")
