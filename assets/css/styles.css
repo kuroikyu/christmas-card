@@ -55,7 +55,7 @@ html, body {
 }
 
 .background {
-  background-color: #444;
+  background: repeating-linear-gradient(-45deg, #2EC4B6, #2EC4B6 200px, #E71D36 200px, #E71D36 400px);
   height: 100%;
   width: 100%;
 }
@@ -81,8 +81,8 @@ html, body {
 }
 
 .flip-container.hover {
-  -webkit-animation: hover .9s infinite ease-in-out;
-          animation: hover .9s infinite ease-in-out;
+  -webkit-animation: float 1.8s infinite ease-in-out;
+          animation: float 1.8s infinite ease-in-out;
 }
 
 .flip-container .front, .flip-container .card {
@@ -110,7 +110,7 @@ html, body {
 }
 
 .front {
-  background-image: url(https://images.unsplash.com/photo-1466657718950-8f9346c04f8f);
+  background-image: url("https://images.unsplash.com/photo-1451772741724-d20990422508");
   background-position: center;
   background-size: cover;
   -webkit-transform: rotateY(0deg);
@@ -119,25 +119,30 @@ html, body {
 }
 
 .card {
-  background-color: cornsilk;
+  background-color: #EFFFE9;
   padding: 1em;
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
+  font-family: "Cookie";
+  color: #011627;
 }
 
 .card .to, .card .message, .card .from {
   position: absolute;
-  font-size: 1.25em;
+  font-size: 2.5em;
 }
 
 .card .message {
   top: 50%;
   left: 50%;
+  text-align: center;
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   width: 100%;
   max-width: 90%;
+  font-size: 3.5em;
+  line-height: 1.5em;
 }
 
 .card .from {
@@ -173,4 +178,44 @@ html, body {
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
   }
+}
+
+@-webkit-keyframes float {
+  0% {
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  50% {
+    -webkit-transform: translate(-50%, -50%) scale(1.05);
+            transform: translate(-50%, -50%) scale(1.05);
+    box-shadow: 0 30px 30px -14px rgba(0, 0, 0, 0.25);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes float {
+  0% {
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  50% {
+    -webkit-transform: translate(-50%, -50%) scale(1.05);
+            transform: translate(-50%, -50%) scale(1.05);
+    box-shadow: 0 30px 30px -14px rgba(0, 0, 0, 0.25);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+}
+
+.green {
+  color: #2EC4B6;
+}
+
+.red {
+  color: #E71D36;
 }

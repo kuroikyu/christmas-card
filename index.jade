@@ -17,7 +17,10 @@ html(lang="en")
     // Normalize HTML5 Reset
     link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css")
 
-    // styles.css link  
+    // font link
+    link(href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet")
+
+    // styles.css link
     link(rel="stylesheet" href="assets/css/styles.css")
 
   body
@@ -27,9 +30,16 @@ html(lang="en")
           .front
           .card
             .to to #[span.names-target]
-            .message Have a fabulous festive season and a #[em feliz año nuevo!]
+            .message
+              span.green Have a fabulous
+              br
+              span.green festive season
+              br
+              span.green and
+              br
+              span.red feliz año nuevo!
             .from Alvaro &amp; Marta
-            
-    
+
+
     // script.js link
     script(type="application/javascript", src="assets/js/script.min.js")

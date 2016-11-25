@@ -1,22 +1,27 @@
 /* --------------------------------------------------------------------------
    Variables
    -------------------------------------------------------------------------- */
+// lolcolors
+$red: #E71D36
+$green: #2EC4B6
+$white: #EFFFE9
+$black: #011627
 
 $main: #fff
 $secondary: #fff
 $highlight: #fff
 
-$background: #444
+$background: #555
 $text: #000
 
 $shadow: rgba(0, 0, 0, .25)
-$white: #fff
 
 $card-height: 700px
 $card-max-height: 90vh
 $card-ratio: 5/7
 $card-width: $card-height * $card-ratio
 $card-max-width: $card-max-height * $card-ratio
+$card-front: "https://images.unsplash.com/photo-1451772741724-d20990422508"
 
 
 
@@ -63,7 +68,8 @@ html, body
   overflow: hidden
 
 .background
-  background-color: $background
+  // background-color: $red
+  background: repeating-linear-gradient(-45deg,$green,$green 200px,$red 200px,$red 400px)
   height: 100%
   width: 100%
 
@@ -82,7 +88,9 @@ html, body
     .flipper
       transform: rotateY(-180deg)
   &.hover
-    animation: hover .9s infinite ease-in-out
+    // animation: hover .9s infinite ease-in-out
+    animation: float 1.8s infinite ease-in-out
+
   .front, .card,
     height: $card-height
     max-height: $card-max-height
@@ -103,27 +111,34 @@ html, body
   top: 0
 
 .front
-  background-image: url(https://images.unsplash.com/photo-1466657718950-8f9346c04f8f)
+  background-image: url($card-front)
   background-position: center
   background-size: cover
   transform: rotateY(0deg)
   z-index: 2
 
 .card
-  background-color: cornsilk
+  background-color: $white
   padding: 1em
   transform: rotateY(180deg)
+  font-family: "Cookie"
+  color: $black
   .to, .message, .from
     position: absolute
-    font-size: 1.25em
+    font-size: 2.5em
 
   .to
+
   .message
     top: 50%
     left: 50%
+    text-align: center
     transform: translate(-50%, -50%)
     width: 100%
     max-width: 90%
+    font-size: 3.5em
+    line-height: 1.5em
+
   .from
     bottom: 1em
     right: 1em
@@ -137,3 +152,21 @@ html, body
 
   100%
     transform: translate(-50%, -50%)
+
+@keyframes float
+  0%
+    transform: translate(-50%, -50%)
+
+  50%
+    transform: translate(-50%, -50%) scale(1.05)
+    // box-shadow: 0 20px 10px -14px $shadow
+    box-shadow: 0 30px 30px -14px $shadow
+
+
+  100%
+    transform: translate(-50%, -50%)
+
+.green
+  color: $green
+.red
+  color: $red
