@@ -81,6 +81,8 @@ html, body
   &.flip-it
     .flipper
       transform: rotateY(-180deg)
+  &.hover
+    animation: hover .9s infinite ease-in-out
   .front, .card,
     height: $card-height
     max-height: $card-max-height
@@ -90,7 +92,7 @@ html, body
 .flipper
   position: relative
   transform-style: preserve-3d
-  transition: all 900ms ease-in-out
+  transition: all 1s ease-in-out
 
 .front, .card
   box-shadow: 0 20px 10px -14px $shadow
@@ -125,3 +127,13 @@ html, body
   .from
     bottom: 1em
     right: 1em
+
+@keyframes hover
+  0%
+    transform: translate(-50%, -50%)
+
+  50%
+    transform: translate(-50%, -48.5%)
+
+  100%
+    transform: translate(-50%, -50%)

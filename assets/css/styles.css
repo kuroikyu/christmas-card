@@ -80,6 +80,11 @@ html, body {
           transform: rotateY(-180deg);
 }
 
+.flip-container.hover {
+  -webkit-animation: hover .9s infinite ease-in-out;
+          animation: hover .9s infinite ease-in-out;
+}
+
 .flip-container .front, .flip-container .card {
   height: 700px;
   max-height: 90vh;
@@ -91,7 +96,7 @@ html, body {
   position: relative;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
-  transition: all 900ms ease-in-out;
+  transition: all 1s ease-in-out;
 }
 
 .front, .card {
@@ -138,4 +143,34 @@ html, body {
 .card .from {
   bottom: 1em;
   right: 1em;
+}
+
+@-webkit-keyframes hover {
+  0% {
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  50% {
+    -webkit-transform: translate(-50%, -48.5%);
+            transform: translate(-50%, -48.5%);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes hover {
+  0% {
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  50% {
+    -webkit-transform: translate(-50%, -48.5%);
+            transform: translate(-50%, -48.5%);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
 }
