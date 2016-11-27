@@ -16,11 +16,11 @@ $text: #000
 
 $shadow: rgba(0, 0, 0, .25)
 
-$card-height: 700px
-$card-max-height: 90vh
 $card-ratio: 5/7
-$card-width: $card-height * $card-ratio
-$card-max-width: $card-max-height * $card-ratio
+$card-height: 700px
+$card-width: 500px
+$card-max-width: 90vw
+$card-max-height: $card-max-width * 1/$card-ratio
 $card-front: "https://images.unsplash.com/photo-1451772741724-d20990422508"
 
 
@@ -64,7 +64,8 @@ hr
   box-sizing: border-box
 
 html, body
-  height: 100%
+  height: 100vh
+  width: 100vw
   overflow: hidden
 
 .green
@@ -75,8 +76,8 @@ html, body
 
 .background
   background: repeating-linear-gradient(-45deg,$green,$green 200px,$red 200px,$red 400px)
-  height: 100%
-  width: 100%
+  height: 100vh
+  width: 100vw
   overflow: hidden
 
 .flip-container
@@ -89,6 +90,7 @@ html, body
   transform: translate(-50%, -50%)
   width: $card-width
   max-width: $card-max-width
+
   &.flip-it
     .flipper
       transform: rotateY(-180deg)
