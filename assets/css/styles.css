@@ -120,7 +120,7 @@ html, body {
 }
 
 .front {
-  background-image: url("https://images.unsplash.com/photo-1451772741724-d20990422508");
+  background-image: url("../img/front.png");
   background-position: center;
   background-size: cover;
   -webkit-transform: rotateY(0deg);
