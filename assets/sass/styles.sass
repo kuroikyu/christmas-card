@@ -67,10 +67,17 @@ html, body
   height: 100%
   overflow: hidden
 
+.green
+  color: $green
+
+.red
+  color: $red
+
 .background
   background: repeating-linear-gradient(-45deg,$green,$green 200px,$red 200px,$red 400px)
   height: 100%
   width: 100%
+  overflow: hidden
 
 .flip-container
   max-height: $card-max-height
@@ -117,15 +124,18 @@ html, body
 
 .card
   background-color: $white
-  padding: 1em
-  transform: rotateY(180deg)
-  font-family: "Cookie"
   color: $black
+  font-family: "Cookie"
+  outline: 2px solid $shadow
+  outline-offset: -1em
+  transform: rotateY(180deg)
   .to, .message, .from
     position: absolute
     font-size: 2.5em
 
   .to
+    top: .8em
+    left: 1.2em
 
   .message
     top: 50%
@@ -138,8 +148,8 @@ html, body
     line-height: 1.5em
 
   .from
-    bottom: 1em
-    right: 1em
+    bottom: .8em
+    right: 1.2em
 
 @keyframes hover
   0%
@@ -163,9 +173,3 @@ html, body
 
   100%
     transform: translate(-50%, -50%)
-
-.green
-  color: $green
-
-.red
-  color: $red

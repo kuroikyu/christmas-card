@@ -54,10 +54,19 @@ html, body {
   overflow: hidden;
 }
 
+.green {
+  color: #2EC4B6;
+}
+
+.red {
+  color: #E71D36;
+}
+
 .background {
   background: repeating-linear-gradient(-45deg, #2EC4B6, #2EC4B6 200px, #E71D36 200px, #E71D36 400px);
   height: 100%;
   width: 100%;
+  overflow: hidden;
 }
 
 .flip-container {
@@ -120,16 +129,22 @@ html, body {
 
 .card {
   background-color: #EFFFE9;
-  padding: 1em;
+  color: #011627;
+  font-family: "Cookie";
+  outline: 2px solid rgba(0, 0, 0, 0.25);
+  outline-offset: -1em;
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
-  font-family: "Cookie";
-  color: #011627;
 }
 
 .card .to, .card .message, .card .from {
   position: absolute;
   font-size: 2.5em;
+}
+
+.card .to {
+  top: .8em;
+  left: 1.2em;
 }
 
 .card .message {
@@ -146,8 +161,8 @@ html, body {
 }
 
 .card .from {
-  bottom: 1em;
-  right: 1em;
+  bottom: .8em;
+  right: 1.2em;
 }
 
 @-webkit-keyframes hover {
@@ -210,12 +225,4 @@ html, body {
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
   }
-}
-
-.green {
-  color: #2EC4B6;
-}
-
-.red {
-  color: #E71D36;
 }
