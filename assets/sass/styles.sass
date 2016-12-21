@@ -1,17 +1,42 @@
 /* --------------------------------------------------------------------------
    Variables
    -------------------------------------------------------------------------- */
-// lolcolors
-$red: #E71D36
-$green: #2EC4B6
+
+
+// Original colors from lolcolors.com
+// #E71D36
+// #2EC4B6
+// #EFFFE9
+// #011627
+
+// Colors from Marta
+// #b6d5ad
+// #539760
+// #ffe3ad
+// #e0a661
+// #ab6d56
+// #5e4a48
+// #a5373b
+
+// Colors extracted from Marta's illustration
+// #A9D6AB
+// #00985E
+// #5C7163
+// #C2333A
+// #654948
+
+
+$red: #C2333A
+$green: #00985E
 $white: #EFFFE9
-$black: #011627
+$black: #654948
 
 $main: #fff
 $secondary: #fff
 $highlight: #fff
 
-$background: #555
+$background: red
+$border: transparentize($black, .7)
 $text: #000
 
 $shadow: rgba(0, 0, 0, .25)
@@ -137,7 +162,7 @@ html, body
   background-color: $white
   color: $black
   font-family: "Cookie"
-  outline: 2px solid $shadow
+  outline: 2px solid $border
   outline-offset: -1em
   transform: rotateY(180deg)
   .to, .message, .from

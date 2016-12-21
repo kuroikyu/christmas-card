@@ -46,13 +46,13 @@ html, body {
   width: 100vw; }
 
 .green {
-  color: #2EC4B6; }
+  color: #00985E; }
 
 .red {
-  color: #E71D36; }
+  color: #C2333A; }
 
 .background {
-  background: repeating-linear-gradient(-45deg, #2EC4B6, #2EC4B6 200px, #E71D36 200px, #E71D36 400px);
+  background: repeating-linear-gradient(-45deg, #00985E, #00985E 200px, #C2333A 200px, #C2333A 400px);
   height: 100vh;
   width: 100vw;
   overflow: hidden; }
@@ -111,15 +111,15 @@ html, body {
     left: 0;
     padding-bottom: .5em;
     padding-left: .75em;
-    color: #2EC4B6;
+    color: #00985E;
     font-family: 'Cookie';
     font-size: 1.5em; }
 
 .card {
   background-color: #EFFFE9;
-  color: #011627;
+  color: #654948;
   font-family: "Cookie";
-  outline: 2px solid rgba(0, 0, 0, 0.25);
+  outline: 2px solid rgba(101, 73, 72, 0.3);
   outline-offset: -1em;
   -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg); }
