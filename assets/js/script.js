@@ -26,15 +26,33 @@ function getQueryValues() {
   let query = location.search.substring(1)
   let vars = query.split('&')
   let values = []
+
+  // loop through all URL values
   for (let i=0; i<vars.length; i++) {
     let out = vars[i].split('=')[1]
+    // check if there are no parameters in the URL
+    if (typeof out === 'undefined') {
+      out = 'You'
+      return out
+    }
     out = out.replace(/%20/g, ' ')
     values.push(out)
   }
+  if (values.length > 1) {
+    return values.join(', ')
+  } else {
     return values
+  }
 };
 
 (() => {
-  const targety = document.getElementsByClassName('names-target')[0]
-  targety.innerHTML = getQueryValues().join(', ')
+  let targety
+  let addressedTo
+
+  // Cache target DOM element
+  targety = document.getElementsByClassName('names-target')[0]
+  // Get names from url
+  addressedTo = getQueryValues()
+  // Fill target element with the names
+  targety.innerHTML = addressedTo
 })()
