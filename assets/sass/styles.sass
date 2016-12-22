@@ -25,6 +25,9 @@
 // #C2333A
 // #654948
 
+// Colors extracted from final illustration
+// #6A9372
+// #F2D7D8
 
 $red: #C2333A
 $green: #00985E
@@ -35,18 +38,18 @@ $main: #fff
 $secondary: #fff
 $highlight: #fff
 
-$background: red
+$background: black
 $border: transparentize($black, .7)
 $text: #000
 
 $shadow: rgba(0, 0, 0, .25)
 
-$card-ratio: 5/7
+$card-ratio: 5.5/7
 $card-height: 700px
-$card-width: 500px
+$card-width: 550px
 $card-max-width: 90vw
 $card-max-height: $card-max-width * 1/$card-ratio
-$card-front: "../img/front.png"
+$card-front: "../img/christmas-card.jpg"
 
 
 
@@ -103,6 +106,17 @@ html, body
   width: 100vw
   overflow: hidden
 
+.author
+  font-family: 'Open Sans', sans-serif
+  text-align: center
+  font-size: 1em
+  color: $white
+  position: absolute
+  left: 50%
+  bottom: 1em
+  transform: translateX(-50%)
+  opacity: .7
+
 .flip-container
   max-height: $card-max-height
   height: $card-height
@@ -148,20 +162,10 @@ html, body
   z-index: 2
   position: relative
 
-  .author
-    position: absolute
-    bottom: 0
-    left: 0
-    padding-bottom: .5em
-    padding-left: .75em
-    color: $green
-    font-family: 'Cookie'
-    font-size: 1.5em
-
 .card
   background-color: $white
   color: $black
-  font-family: "Cookie"
+  font-family: "Cookie", cursive
   outline: 2px solid $border
   outline-offset: -1em
   transform: rotateY(180deg)

@@ -57,8 +57,21 @@ html, body {
   width: 100vw;
   overflow: hidden; }
 
+.author {
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  font-size: 1em;
+  color: #EFFFE9;
+  position: absolute;
+  left: 50%;
+  bottom: 1em;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  opacity: .7; }
+
 .flip-container {
-  max-height: 126vw;
+  max-height: 114.54545vw;
   height: 700px;
   left: 50%;
   -webkit-perspective: 1000px;
@@ -68,7 +81,7 @@ html, body {
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  width: 500px;
+  width: 550px;
   max-width: 90vw; }
   .flip-container.flip-it .flipper {
     -webkit-transform: rotateY(-180deg);
@@ -78,8 +91,8 @@ html, body {
     animation: float 1.8s infinite ease-in-out; }
   .flip-container .front, .flip-container .card {
     height: 700px;
-    max-height: 126vw;
-    width: 500px;
+    max-height: 114.54545vw;
+    width: 550px;
     max-width: 90vw; }
 
 .flipper {
@@ -98,27 +111,18 @@ html, body {
   top: 0; }
 
 .front {
-  background-image: url("../img/front.png");
+  background-image: url("../img/christmas-card.jpg");
   background-position: center;
   background-size: cover;
   -webkit-transform: rotateY(0deg);
   transform: rotateY(0deg);
   z-index: 2;
   position: relative; }
-  .front .author {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    padding-bottom: .5em;
-    padding-left: .75em;
-    color: #00985E;
-    font-family: 'Cookie';
-    font-size: 1.5em; }
 
 .card {
   background-color: #EFFFE9;
   color: #654948;
-  font-family: "Cookie";
+  font-family: "Cookie", cursive;
   outline: 2px solid rgba(101, 73, 72, 0.3);
   outline-offset: -1em;
   -webkit-transform: rotateY(180deg);
